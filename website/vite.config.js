@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import { resolve } from 'path'
 
 export default defineConfig({
   // 开发服务器配置
@@ -20,8 +21,12 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    // 生成资源文件名
+    // 多页面应用配置
     rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        detail: resolve(__dirname, 'detail.html')
+      },
       output: {
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
