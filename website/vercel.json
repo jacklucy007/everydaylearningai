@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+        {
+            "source": "/feishu-api/:path*",
+            "destination": "https://open.feishu.cn/:path*"
+        }
+    ]
+}

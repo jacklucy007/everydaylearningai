@@ -1,0 +1,44 @@
+# 敏感配置 (最重要！)
+.env
+.env.local
+.env.*.local
+jsconfig.json
+*.pem
+
+# 允许提交示例文件
+!.env.example
+
+# 依赖库
+node_modules/
+__pycache__/
+*.py[cod]
+.pip/
+.venv/
+venv/
+env/
+
+# 构建产物与临时文件
+dist/
+build/
+output/
+tmp/
+temp/
+coverage/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE 配置 (可选，视个人喜好)
+.idea/
+.vscode/
+
+# 日志
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# 飞书/其他 Token 缓存（如果有）
+*.token
+*.cache

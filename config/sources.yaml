@@ -1,0 +1,95 @@
+# 每日内容策展 - 配置文件
+# Daily Content Curation - Configuration
+
+# API 配置
+api:
+  # OpenAI 兼容接口配置
+  openai:
+    api_key: "${OPENAI_API_KEY}"  # 请在 .env 文件中配置 OPENAI_API_KEY
+    base_url: "https://api.deepseek.com/v1"
+    model: "deepseek-chat"
+
+  # 飞书多维表格配置
+  feishu:
+    app_id: "${FEISHU_APP_ID}"  # 请在 .env 文件中配置
+    app_secret: "${FEISHU_APP_SECRET}"
+    app_token: "${FEISHU_APP_TOKEN}"
+    table_id: "${FEISHU_TABLE_ID}"
+
+# YouTube 订阅源
+sources:
+  youtube:
+    # 频道配置 - channel_id 支持 Handle 或 UC 开头的 ID
+    - name: "Dan Koe"
+      channel_id: "DanKoeTalks"
+      description: "探索人类潜能与创作者经济的深度思考"
+      icon: "🧠"
+      enabled: true
+
+    - name: "Greg Isenberg"
+      channel_id: "GregIsenberg"
+      description: "社区构建与互联网商业模式分析"
+      icon: "🏙️"
+      enabled: true
+
+    - name: "Marc Lou"
+      channel_id: "marc-lou"
+      description: "独立开发者的产品构建与营销实战"
+      icon: "🚀"
+      enabled: true
+
+    - name: "Indie Hackers"
+      channel_id: "IndieHackers"
+      description: "全球独立开发者的成功故事与经验分享"
+      icon: "💻"
+      enabled: true
+
+    - name: "Tony Dinh"
+      channel_id: "TonyDinh"
+      description: "全职独立开发者的技术与生活"
+      icon: "👨‍💻"
+      enabled: true
+
+    - name: "Volo Builds"
+      channel_id: "VoloBuilds"
+      description: "构建软件产品的全过程记录"
+      icon: "🛠️"
+      enabled: true
+
+    - name: "Corbin"
+      channel_id: "corbinhack"
+      description: "Web开发技术与各种黑客技巧"
+      icon: "⚡"
+      enabled: true
+
+# V2 计划 - 暂不启用
+# sources:
+#   bilibili:
+#     - name: "示例UP主"
+#       uid: "123456"
+#       enabled: false
+#   
+#   xiaoyuzhou:
+#     - name: "示例播客"
+#       podcast_id: "xxx"
+#       enabled: false
+
+# 输出配置
+output:
+  # 归档输出目录（相对于项目根目录）
+  archive_dir: "output"
+  
+  # 文件命名格式
+  # 可用变量: {date}, {title}, {video_id}
+  folder_format: "{date}_{video_id}"
+
+# 处理配置
+processing:
+  # 批量模式下每次最多处理的数量
+  max_batch_size: 10
+  
+  # 是否自动下载封面图片
+  download_cover: true
+  
+  # AI 改写的目标字数（约）
+  summary_target_words: 2000

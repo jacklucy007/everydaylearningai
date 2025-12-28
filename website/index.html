@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI精品内容策展</title>
+    <meta name="description" content="AI驱动的深度内容解读，精选优质创作者的核心观点与洞察">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <a href="/" class="logo">
+                    <span class="logo-icon">✨</span>
+                    <span class="logo-text">每日策展</span>
+                </a>
+                <nav class="nav">
+                    <a href="/" class="nav-link active">首页</a>
+                    <button onclick="window.app?.refresh()" class="nav-link btn-refresh">刷新</button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <div class="container">
+                <!-- Hero Section -->
+                <section class="hero">
+                    <h1 class="hero-title">每日内容策展</h1>
+                    <p class="hero-subtitle">AI驱动的深度内容解读，精选优质创作者的核心观点与洞察</p>
+                </section>
+
+                <!-- Filters -->
+                <section class="filters">
+                    <div class="filter-header">
+                        <h2 class="section-heading">探索频道</h2>
+                        <div class="search-group">
+                            <input type="text" id="searchInput" placeholder="搜索主题、观点或创作者..." class="filter-input">
+                            <button onclick="window.app?.search()" class="search-btn">
+                                <span class="search-icon">🔍</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Channel Grid Buttons -->
+                    <div id="channelGrid" class="channel-filters-grid">
+                        <!-- 动态生成的频道按钮 -->
+                    </div>
+                </section>
+
+                <!-- Loading State -->
+                <section id="loadingState" class="loading-state">
+                    <div class="loading-spinner"></div>
+                    <p>正在加载内容...</p>
+                </section>
+
+                <!-- Posts Grid -->
+                <section id="postsGrid" class="posts-grid" style="display: none;"></section>
+
+                <!-- Empty State -->
+                <section id="emptyState" class="empty-state" style="display: none;">
+                    <div class="empty-icon">📭</div>
+                    <h3>暂无内容</h3>
+                    <p>还没有策展内容，请稍后再来查看</p>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>© 2025 AI精品内容策展 · 由飞书多维表格驱动</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

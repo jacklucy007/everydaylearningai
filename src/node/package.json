@@ -1,0 +1,19 @@
+{
+    "name": "content-rewriter",
+    "version": "1.0.0",
+    "description": "AI content rewriter for daily content curation",
+    "main": "rewriter.js",
+    "type": "module",
+    "scripts": {
+        "rewrite": "node rewriter.js",
+        "test": "node rewriter.js --test"
+    },
+    "dependencies": {
+        "dotenv": "^17.2.3",
+        "js-yaml": "^4.1.0",
+        "openai": "^4.20.0"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    }
+}

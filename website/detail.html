@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章详情 - 每日策展</title>
+    <meta name="description" content="AI驱动的深度内容解读">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <a href="/" class="logo">
+                    <span class="logo-icon">✨</span>
+                    <span class="logo-text">每日策展</span>
+                </a>
+                <nav class="nav">
+                    <a href="/" class="nav-link">首页</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Loading State -->
+            <div id="loadingState" class="loading-state">
+                <div class="loading-spinner"></div>
+                <p>正在加载文章...</p>
+            </div>
+
+            <!-- Detail Content -->
+            <article id="detailContent" class="detail-page" style="display: none;"></article>
+
+            <!-- Error State -->
+            <div id="errorState" class="error-page" style="display: none;">
+                <div class="error-icon">🔍</div>
+                <h1>404</h1>
+                <p>抱歉，您访问的文章不存在</p>
+                <a href="/" class="btn-home">返回首页</a>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p>© 2024 每日内容策展 · 由飞书多维表格驱动</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="/src/detail.js"></script>
+</body>
+
+</html>
